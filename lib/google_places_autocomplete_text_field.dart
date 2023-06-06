@@ -263,7 +263,11 @@ class _GooglePlacesAutoCompleteTextFormFieldState
 
     if (text.isEmpty) {
       allPredictions.clear();
-      _overlayEntry!.remove();
+      try {
+        _overlayEntry!.remove();
+      } catch (e) {
+       // 
+      }
       return;
     }
 
